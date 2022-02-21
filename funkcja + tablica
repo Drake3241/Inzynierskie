@@ -1,0 +1,51 @@
+/*
+Napisz funkcję int maks1D(int t[], int n)
+która dla tablicy t[] o rozmiarze n danej jako parametr zwróci wartość
+elementu maksymalnego.
+0. Zdefiniuj za pomocą dyrektywy #define N z wartością np. 10
+1. W funkcji main utwórz tablicę int’ów o rozmiarze N
+2. Poproś użytkownika o podanie N-liczb i zapisz je do tablicy
+(Wypełniamy całą tablicę liczbami podawanymi przez użytkownika)
+3. Wywołaj funkcję maks1D podając jako argumenty nazwę tablicy
+oraz jej rozmiar czyli N. Wypisz wartość którą zwróciła funkcja
+4. Wywołaj funkcję maks1D podając jako argumenty nazwę tablicy oraz
+jej rozmiar podzielony przez dwa czyli N/2. Wypisz wartość którą
+zwróciła funkcja.
+*/
+#include <iostream>
+
+
+#define N 12
+
+using namespace std;
+
+int maks1D(int t[], int n) {
+	int biggestNumber = 0;
+	for (int i = 0; i < n; i++) {
+		if (biggestNumber < t[i])
+			biggestNumber = t[i];
+	}
+	return biggestNumber;
+
+}
+
+int main()
+{
+	
+	int number = 0;
+	
+	
+	int oneDimArray[N] = {};
+
+	
+	for (int i = 0; i < N; i++) {
+		cout << "Podaj " << i + 1 << " liczbe w tabeli z " << N << endl;
+		cin >> number;
+	
+		oneDimArray[i] = number;
+	}
+	
+	cout << endl << "Funkcja maks1D z parametrem N zwrocila " << maks1D(oneDimArray, N) << endl;
+	cout << "Funkcja maks1D z parametrem N/2 zwrocila " << maks1D(oneDimArray, N / 2);
+}
+
