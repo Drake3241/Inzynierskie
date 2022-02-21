@@ -14,7 +14,7 @@ zwróciła funkcja.
 */
 #include <iostream>
 
-
+//zdefiniuj N z wartością 12
 #define N 12
 
 using namespace std;
@@ -31,21 +31,22 @@ int maks1D(int t[], int n) {
 
 int main()
 {
-	
+	//zrob zmienna do przechowywania liczby podanej przez uzytkownika
 	int number = 0;
 	
-	
+	// utworz tablice jednowymiarowa o wartosci rownej N. Obecnie tablica zainicjowana jest z 0 na kazdej pozycji
 	int oneDimArray[N] = {};
 
-	
+	//W petli podaj kolejne liczby, uzupelniajac tablice. 
 	for (int i = 0; i < N; i++) {
 		cout << "Podaj " << i + 1 << " liczbe w tabeli z " << N << endl;
 		cin >> number;
-	
+		//przypisanie podawanych liczb do kolejnych pozycji w tabeli
 		oneDimArray[i] = number;
 	}
 	
 	cout << endl << "Funkcja maks1D z parametrem N zwrocila " << maks1D(oneDimArray, N) << endl;
 	cout << "Funkcja maks1D z parametrem N/2 zwrocila " << maks1D(oneDimArray, N / 2);
 }
+
 
